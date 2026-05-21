@@ -28,15 +28,13 @@ And 6 phases across all of them:
 
 ## How it works
 
-Open `FORGE.html` in any browser. That's it.
+Open `FORGE.html` in any browser.
 
-- Check off tasks as you complete them — progress saves automatically to localStorage
+- Check off tasks as you complete them, progress saves automatically to localStorage (Just use the same browser and don't clear the browser's data)
 - Today's day is highlighted with a banner and task counter
 - Each track has a color-coded progress bar
 - A different motivational quote shows up each day
 - Everything is collapsible so you can focus on what matters right now
-
-No install, no npm, no server. Just open and work.
 
 ---
 
@@ -57,6 +55,6 @@ Keeping it as a single HTML file was a deliberate choice. It's portable, you can
 
 ## Notes
 
-- Progress is stored in your browser's localStorage. Clearing browser data will reset it.
+- Progress is stored in the browser's localStorage. Clearing browser data will reset it.
 - The tracker is built around a fixed 245-day schedule, so days and phases are hardcoded.
 - Built and used daily. Not meant to be a general-purpose tool, but you're welcome to fork and adapt it to your own roadmap.

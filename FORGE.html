@@ -928,10 +928,22 @@ function countUpAll(){
     if(d===day.tasks.length&&day.tasks.length>0)daysDone++;
   });
   const pct=totalAll>0?Math.round(totalDone/totalAll*100):0;
-  // Animate each stat
-  animateValue('sDone',0,totalDone,900);
-  animateValue('sDays',0,daysDone,900);
-  animateValuePct('sPct',0,pct,900);
+
+  // Calculate streak for load animation
+  let streak=0;
+  if(TODAY>=0){
+    for(let di=TODAY;di>=0;di--){
+      const day=DAYS[di];
+      if(day.tasks.length>0&&day.tasks.every((_,ti)=>!!s[`${di}-${ti}`]))streak++;
+      else break;
+    }
+  }
+
+  // Animate each stat with a slower, more satisfying duration (2200ms)
+  animateValue('sDone',0,totalDone,2200);
+  animateValue('sDays',0,daysDone,2200);
+  animateValuePct('sPct',0,pct,2200);
+  animateValue('sStreak',0,streak,2200);
 }
 function animateValue(id,start,end,duration){
   if(end===start){setText(id,end);return;}
